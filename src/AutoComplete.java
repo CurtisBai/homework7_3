@@ -6,10 +6,17 @@ public class AutoComplete {
 
     TreeMap<String, TreeSet<String>> wordTable;
 
+    /**
+     * constructor
+     */
     public AutoComplete() {
         wordTable = new TreeMap<String, TreeSet<String>>();
     }
 
+    /**
+     * add new word into AutoComplete
+     * @param word
+     */
     public void addWords(String word) {
         word = word.trim().toLowerCase();
         for (int i = 1; i <= word.length(); i++) {
@@ -23,6 +30,11 @@ public class AutoComplete {
 
     }
 
+    /**
+     * search word from AutoComplete
+     * @param word
+     * @return
+     */
     public TreeSet<String> searchText(String word) {
         word = word.trim().toLowerCase();
         if (wordTable.containsKey(word)) {
